@@ -18,14 +18,6 @@ test_set = pd.read_json('./test_set.json')
 #original_documents = pd.read_json('./documents.json')
 
 
-# Use logistic regression to predict the class
-# vectorizer = TfidfVectorizer(max_features=10000)
-# X = vectorizer.fit_transform(training_set['summary'])
-# clf = LogisticRegression()
-# clf.fit(X, training_set['label'])
-# X_test = vectorizer.transform(test_set['summary'])
-# predictions = clf.predict(X_test)
-
 from transformers import RobertaTokenizer, TFRobertaModel
 tokenizer = RobertaTokenizer.from_pretrained('roberta-base', model_max_len=512, truncation=True, padding=True)
 
